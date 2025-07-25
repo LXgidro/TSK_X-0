@@ -1,0 +1,32 @@
+.status {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.xTurn {
+  color: #00d8ff;
+}
+
+.oTurn {
+  color: #ffcb23;
+}
+
+.xWin {
+  color: #00d8ff;
+  text-shadow: 0 0 2px #00d8ff;
+  text-decoration: underline;
+}
+
+.oWin {
+  color: #ffcb23;
+  text-shadow: 0 0 2px #ffcb23;
+  text-decoration: underline;
+}
+
+.draw {
+  color: #ffffff;
+  text-shadow: 0 0 2px white;
+  text-decoration: underline;
+}
