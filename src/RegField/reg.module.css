@@ -1,0 +1,99 @@
+.reg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reg form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  max-width: 500px;
+  padding: 2rem;
+  background: #161616;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.field {
+  position: relative;
+  min-height: 65px;
+}
+
+.reg input {
+  padding: 10px 16px;
+  border: 2px solid #be34fe;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  height: 40px;
+  margin: 0;
+}
+
+.reg input:focus {
+  outline: none;
+  border-color: #ffc61e;
+  box-shadow: 0 0 0 2px #ffc61e;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.reg button {
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.reg button[type='submit']:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00d8ff;
+  background-color: #ffc61e;
+}
+
+.reg button[type='submit'] {
+  background-color: #ffc61e;
+  color: #000000;
+}
+
+.reg button[type='submit']:hover {
+  background-color: #ffc61e;
+  box-shadow: 0 0 0 2px #00d8ff;
+}
+
+.reg button[type='button'] {
+  background-color: #f0f0f0be;
+  color: #333;
+}
+
+.reg button[type='button']:hover {
+  background-color: #ffffff;
+
+  box-shadow: 0 0 0 2px #00d8ff;
+}
+
+.reg input.error {
+  border-color: #ff4d4f;
+}
+
+.errorMessage {
+  color: #ff4d4f;
+  font-size: 13px;
+  height: 20px;
+  margin-top: 4px;
+}
+
+.submitButton:disabled {
+  background-color: #ffc71ea2 !important;
+  color: #161616 !important;
+  cursor: not-allowed;
+}
