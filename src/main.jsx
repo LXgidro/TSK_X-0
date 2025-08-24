@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
     {/* <Game /> */}
-    {/* <RegForm /> */}
-    <RegForm_RHF />
+    <RegForm />
+    {/* <RegForm_RHF /> */}
   </StrictMode>
 );

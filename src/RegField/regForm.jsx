@@ -1,6 +1,6 @@
 import styles from './reg.module.css';
 import { useStore } from './useStore';
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   validateEmail,
   validatePassword,
@@ -21,28 +21,23 @@ const RegForm = () => {
   const submitButtonRef = useRef(null);
   const { email, password, confirmPassword } = getState();
 
-  const isFormValid = useCallback(() => {
-    const { email, password, confirmPassword } = getState();
-    return (
-      !validateEmail(email) &&
-      !validatePassword(password) &&
-      !validateConfirmPassword(password, confirmPassword)
-    );
-  }, [getState]);
+  const isValid =
+    !validateEmail(email) &&
+    !validatePassword(password) &&
+    !validateConfirmPassword(password, confirmPassword);
 
   useEffect(() => {
-    if (isFormValid() && submitButtonRef.current) {
+    if (isValid && submitButtonRef.current) {
       submitButtonRef.current.focus();
     }
-  }, [email, password, confirmPassword, isFormValid]);
+  }, [isValid]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!isFormValid()) return;
+    if (!isValid) return;
 
     sendFormData(getState());
-
     resetState();
     setErrors({ email: null, password: null, confirmPassword: null });
   };
@@ -150,7 +145,7 @@ const RegForm = () => {
           <button
             type="submit"
             className={styles.submitButton}
-            disabled={!isFormValid()}
+            disabled={!isValid}
             ref={submitButtonRef}
           >
             Зарегистрироваться

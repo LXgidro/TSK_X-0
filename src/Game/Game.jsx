@@ -29,11 +29,11 @@ const Game = () => {
     [2, 4, 6],
   ];
 
-  const handleCellClick = (index) => {
-    if (isGameEnded || field[index] !== '') return;
+  const handleCellClick = (i) => {
+    if (isGameEnded || field[i] !== '') return;
 
     const newField = [...field];
-    newField[index] = currentPlayer;
+    newField[i] = currentPlayer;
     setField(newField);
 
     checkGameStatus(newField);
